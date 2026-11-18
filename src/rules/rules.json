@@ -1,0 +1,11 @@
+[{
+    "Brinquedos":[
+        {"nome":"Casa Assombrada", "regras":["idade","altura"]},
+        {"nome":"Montanha Russa", "regras":["altura"]},
+        {"nome":"Carrinho de bate-bate", "regras":[]}
+    ],
+    "Regras":[
+        {"nome":"idade", "regra": "X > 18"},
+        {"nome":"altura", "regra": "X >= 170"}
+    ]
+}]
