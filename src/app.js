@@ -24,6 +24,6 @@ const alturaCentimetros = paraCentimetro(alturaMetros);
 
 if (VerificarFaixaEtaria(idade) === "criança" || "idoso" && nomeAcompanhante === null) {
     console.log(`Crianças e idosos deverão estar acompanhados.`)
-} else if () {
+} else if (regras(idade, alturaCentimetros, brinquedoEscolhido) == "Aprovado") {
     
 } 

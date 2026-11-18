@@ -1,11 +1,16 @@
-[{
-    "Brinquedos":[
-        {"nome":"Casa Assombrada", "regras":["idade","altura"]},
-        {"nome":"Montanha Russa", "regras":["altura"]},
-        {"nome":"Carrinho de bate-bate", "regras":[]}
-    ],
-    "Regras":[
-        {"nome":"idade", "regra": "X > 18"},
-        {"nome":"altura", "regra": "X >= 170"}
-    ]
-}]
+{
+    "casa assombrada": {
+        "idadeNeces": 18,
+        "alturaCentNeces": 160
+    },
+
+    "montanha russa": {
+        "idade": 14,
+        "alturaCentNeces": 160
+    },
+
+    "carrinho de bate-bate": {
+        "idade": 12,
+        "alturaCentNeces": 160
+    }
+}
