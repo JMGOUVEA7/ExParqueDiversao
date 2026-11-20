@@ -3,28 +3,32 @@ import {
     calcularIdade,
     VerificarFaixaEtaria,
     paraCentimetro
-} from "src/rules/calculadoras.js";
+} from "./src/scripts/calculadoras.js";
+
+import { regras } from "src/rules/regras.js";
 
 const texto = fs.readFileSync("src/rules/rules.json", "utf-8");
 const Parque = JSON.parse(texto);
 
-console.log ( "Digite os dados da seguinte maneira: npm run dev 'nome' 'dd/mm/aaaa' 'dd/mm/aaaa' 'altura em metros' 'brinquedo' 'nome acompanhante'");
+// Digite os dados da seguinte maneira: npm run dev "nome" "dd/mm/aaaa" "dd/mm/aaaa" "altura em metros" "brinquedo" "nome acompanhante"
 
-const nome = process.argv[3];
-const dataNasc = process.arg[4];
-const dataIngresso = process.arg[5];
-const alturaMetros = process.arg[6];
-const brinquedoEscolhido = process.arg[7];
-const nomeAcompanhante = process.arg[8];
+const nome = process.argv[2];
+const dataNasc = process.argv[3];
+const dataIngresso = process.argv[4];
+const alturaMetros = process.argv[5];
+const brinquedoEscolhido = process.argv[6];
+const nomeAcompanhante = process.argv[7];
 
 const idade = calcularIdade(dataNasc, dataIngresso);
 
 const alturaCentimetros = paraCentimetro(alturaMetros);
 
+const faixaEtaria = VerificarFaixaEtaria(idade)
+
 if( !nome || !dataNasc || !dataIngresso || !alturaMetros || !brinquedoEscolhido ) {
     console.log("Insira todos os dados.")
 } 
-else if (VerificarFaixaEtaria(idade) === "criança" || "idoso" && nomeAcompanhante === null) {
+else if ((faixaEtaria === "Criança" || faixaEtaria === "Idoso") && !nomeAcompanhante) {
     console.log(`Crianças e idosos deverão estar acompanhados.`)
 } 
 else if (regras(idade, alturaCentimetros, brinquedoEscolhido) !== "Aprovado") {

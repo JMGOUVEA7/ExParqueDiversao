@@ -1,6 +1,6 @@
 export function calcularIdade(dataNasc, dataIngresso) {
-    dataNasc.split("/")
-    dataIngresso.split("/")
+    dataNasc = dataNasc.split("/")
+    dataIngresso = dataIngresso.split("/")
 
     return  dataIngresso[2] - dataNasc[2]
 } 
@@ -24,5 +24,5 @@ export function VerificarFaixaEtaria(idade) {
 }
 
 export function paraCentimetro(alturaMetros) {
-    return Math.round(altura / 100)
+    return Math.round(alturaMetros * 100)
 }

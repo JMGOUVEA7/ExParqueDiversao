@@ -5,12 +5,12 @@
     },
 
     "montanha russa": {
-        "idade": 14,
+        "idadeNeces": 14,
         "alturaCentNeces": 160
     },
 
     "carrinho de bate-bate": {
-        "idade": 12,
+        "idadeNeces": 12,
         "alturaCentNeces": 160
     }
 }
