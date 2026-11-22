@@ -5,7 +5,7 @@ import {
     paraCentimetro
 } from "./src/scripts/calculadoras.js";
 
-import { regras } from "src/rules/regras.js";
+import { regras } from "./src/rules/rules.js";
 
 const texto = fs.readFileSync("src/rules/rules.json", "utf-8");
 const Parque = JSON.parse(texto);
@@ -25,23 +25,29 @@ const alturaCentimetros = paraCentimetro(alturaMetros);
 
 const faixaEtaria = VerificarFaixaEtaria(idade)
 
+const verificarRegras = regras(idade, alturaCentimetros, brinquedoEscolhido)
+
 if( !nome || !dataNasc || !dataIngresso || !alturaMetros || !brinquedoEscolhido ) {
-    console.log("Insira todos os dados.")
+    console.log("Insira todos os dados.");
+    process.exit(1);
 } 
 else if ((faixaEtaria === "Criança" || faixaEtaria === "Idoso") && !nomeAcompanhante) {
-    console.log(`Crianças e idosos deverão estar acompanhados.`)
+    console.log(`Crianças e idosos deverão estar acompanhados.`);
+    process.exit(1);
 } 
-else if (regras(idade, alturaCentimetros, brinquedoEscolhido) !== "Aprovado") {
-    console.log(regras(idade, alturaCentimetros, brinquedoEscolhido))
+else if (verificarRegras !== "Aprovado") {
+    console.log(verificarRegras);
+    process.exit(1);
 } 
 else {
-    console.log(`Nome: ${nome}`)
-    console.log(`Data de nascimento: ${dataNasc}`)
-    console.log(`Data do ingresso: ${dataIngresso}`)
-    console.log(`Altura: ${alturaMetros}`)
-    console.log(`Brinquedo escolhido: ${brinquedoEscolhido}`)
-    console.log(`Nome do Acompanhante: ${nomeAcompanhante}`)
-    console.log(`Ingresso aprovado.`)
+    console.log(`Nome: ${nome}`);
+    console.log(`Data de nascimento: ${dataNasc}`);
+    console.log(`Data do ingresso: ${dataIngresso}`);
+    console.log(`Altura: ${alturaMetros}`);
+    console.log(`Brinquedo escolhido: ${brinquedoEscolhido}`);
+    console.log(`Nome do Acompanhante: ${nomeAcompanhante}`);
+    console.log(`Ingresso aprovado.`);
+    process.exit(1);
 }
 
 

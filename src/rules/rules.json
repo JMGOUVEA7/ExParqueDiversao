@@ -1,16 +1,19 @@
-{
-    "casa assombrada": {
+[
+    {
+        "nomeBrinquedo": "casa assombrada",
         "idadeNeces": 18,
         "alturaCentNeces": 160
     },
 
-    "montanha russa": {
+    {
+        "nomeBrinquedo": "montanha russa",
         "idadeNeces": 14,
         "alturaCentNeces": 160
     },
 
-    "carrinho de bate-bate": {
+    {
+        "nomeBrinquedo": "carrinho de bate-bate",
         "idadeNeces": 12,
         "alturaCentNeces": 160
     }
-}
+]
