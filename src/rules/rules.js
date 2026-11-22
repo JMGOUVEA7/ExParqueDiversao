@@ -7,7 +7,7 @@ export function regras(dadosPessoa, brinquedoEscolhido) {
     const pessoa = JSON.parse(dadosPessoa);
 
     const filtroBrinquedo = Parque.filter((item) => 
-        item.nomeBrinquedo.toLowerCase() == brinquedoEscolhido.trim().toLowerCase
+        item.nomeBrinquedo.toLowerCase() == brinquedoEscolhido.trim().toLowerCase()
     );
 
     if(filtroBrinquedo.length === 0) {
@@ -20,7 +20,7 @@ export function regras(dadosPessoa, brinquedoEscolhido) {
         return "Idade mínima não atingida."
     } 
     
-    if (pessoa.altura < brinquedo.alturaCentNeces){
+    if (pessoa.alturaCentimetros < brinquedo.alturaCentNeces){
         return "Altura mínima não atingida."
     } 
     
