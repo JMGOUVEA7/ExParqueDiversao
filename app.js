@@ -5,7 +5,8 @@ import {
 } from "./src/scripts/calculadoras.js";
 import { regras } from "./src/rules/rules.js";
 
-// Digite os dados da seguinte maneira: npm run dev "nome" "dd/mm/aaaa" "dd/mm/aaaa" "altura em metros" "brinquedo" "nome acompanhante"
+// Digite os dados da seguinte maneira: 
+// npm run dev "nome" "dd/mm/aaaa" "dd/mm/aaaa" altura em metros(ex: 1.70) utilizando . "brinquedo" "nome acompanhante"
 
 const nome = process.argv[2];
 const dataNasc = process.argv[3];
